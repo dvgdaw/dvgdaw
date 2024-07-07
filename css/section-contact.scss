@@ -1,0 +1,51 @@
+
+section#contact {
+    color: #fff;
+
+    div.flex-container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 50px; // RWD
+
+        div {
+            flex: 1;
+        }
+    }
+
+    @media (min-width: $bpDesktop) {
+
+        div.flex-container {
+            flex-direction: row;
+            gap: 40px;
+        }
+
+    }
+
+    @media (min-width: $bpLarge) {
+
+        div.flex-container {
+            gap: 100px;
+        }
+
+    }
+
+    a.contact-method:link,
+    a.contact-method:visited {
+        font-weight: 500;
+        font-size: 36px;
+        font-family: "DM Sans",sans-serif;
+    }
+
+    a.contact-method:hover,
+    a.contact-method:focus {
+        text-decoration: underline;
+    }
+
+    // Alinea div social-icons
+    div.flex-container div:last-child {
+        display: flex;
+        align-items: center;
+    }
+
+}

@@ -1,0 +1,108 @@
+section#welcome {
+
+    min-height: 100vh;
+    //width: 100%;
+    display: flex;
+    justify-content: center; // Horizontal align
+    align-items: center; // Vertical align
+
+    div.flex-container {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        // Left block
+        div:first-child,
+        div:last-child {
+            //border: 1px solid red;
+            width: 100%;
+        }
+
+        h2 {
+            font-weight: 500;
+
+            // Emoji
+            span {
+                font-size: 32px;
+            }
+        }
+    
+        h3 {
+            font-size: 24px;
+            color: $fontColor;
+            font-weight: normal;
+            margin: 2rem 0; // RWD
+        }
+    
+        h3::before {
+            content: "";
+            display: inline-block;
+            width: 50px;
+            height: 1px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            background-color: $fontColor;
+        }
+    
+        p {
+            color: $fontColor;
+        }
+
+        div.buttons-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            a.btn-works {
+                padding: 0;
+                margin-left: $ml-s;
+                font-weight: bold;
+            }
+
+            a.btn-works::after {
+                content: "";
+                display: inline-block;
+                width: 25px;
+                height: 1px;
+                margin-left: 5px;
+                background-color: $thirdColor;
+            }
+
+        }
+    
+        div.buttons-container {
+            display: flex;
+            margin: 2em 0; // RWD
+        }
+    
+        div.img-coding-container {
+            display: none;
+        }
+
+    }
+
+}
+
+@media (min-width: $bpDesktop) {
+
+    section#welcome div.flex-container {
+
+        flex-direction: row; // RWD
+        //width: 100%;
+
+        padding: 0; // RWD
+
+        p {
+            //max-width: 400px;
+        }
+
+        div.img-coding-container {
+            display: block;
+            text-align: center;
+        }
+
+    }
+
+}

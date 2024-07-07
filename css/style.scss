@@ -1,0 +1,382 @@
+
+@font-face {
+    font-family: Thesignature;
+    src: url('../fonts/Thesignature.ttf');
+}
+
+@font-face {
+    font-family: I-pixel-u;
+    src: url('../fonts/I-pixel-u.ttf');
+}
+
+// NORMALIZE
+
+html {
+    font-size: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+// COLORS
+
+// #7469B6 #AD88C6 #E1AFD1 #FFE6E6
+// #4D869C #7AB2B2 #CDE8E5 #EEF7FF
+
+$primaryColor: #4D869C;
+$secondaryColor: #EEF7FF;
+$thirdColor: #12141D;
+$fontColor: #5A5A5A;
+
+header,
+#welcome,
+#tools {
+    background-color: #FFF;
+}
+
+#about {
+    background-color: $primaryColor;
+}
+
+#portfolio,
+footer {
+    background-color: $secondaryColor;
+}
+
+#services {
+    background-color: #FAFAFB;
+}
+
+#contact {
+    background-color: $thirdColor;
+}
+
+// LOGO
+
+.logo {
+
+    font-family: I-pixel-u, Roboto;
+    font-size: 36px;
+    font-weight: 600;
+    color: $primaryColor;
+
+    span {
+        color: #000;
+    }
+
+}
+
+// BREAK POINTS
+
+$bpTablet: 768px;   // Móviles en horizontal o tablets en vertical - @media (min-width: $bpTablet) {}
+$bpDesktop: 1024px; // Tablets en horizonal y escritorios normales - @media (min-width: $bpDesktop) {}
+$bpLarge: 1200px;   // Escritorios muy anchos - @media (min-width: $bpLarge) {}
+
+// LAYOUT
+
+p.text-normal {
+    line-height: 26px;
+}
+
+h2 {
+    //color: $thirdColor;
+    //padding: $marginsDesktop 0;
+    //line-height: 1.2;
+    font-family: 'DM Sans', serif;
+    font-weight: 700;
+    font-size: 35px; // RWD-M
+}
+
+#about h2::after,
+#portfolio h2::after,
+#services h2::after,
+#contact h2::after {
+    content: "";
+    display: inline-block;
+    width: 50px;
+    height: 1px;
+    margin-left: 5px;
+    background-color: $thirdColor;
+}
+
+#about h2::after,
+#contact h2::after {
+    background-color: #fff;
+}
+
+// MARGINS
+
+$mx-m: 25px;    // Margin x divs mobile
+$my-d: 200px;   // Margin y divs desktop
+$mb-m: 25px;    // Margin b others mobile
+$mb-d: 50px;    // Margin b others desktop
+$ml-s: 20px;    // Margin l small elements
+
+div.wrapper{
+    margin: 0 auto;
+    width: 100%;
+    padding: 100px $mx-m;
+}
+
+section#welcome div.flex-container {
+    padding: 0 $mx-m;
+}
+
+#about h2,
+#about p,
+#services h2,
+#portfolio h2,
+#contact div.contact-info h2,
+#contact div.contact-methods p {
+    margin-bottom: $mb-m;
+}
+
+// Evita que cojan padding del wrapper
+footer div.wrapper,
+#tools div.wrapper {
+    padding: 0;
+}
+
+@media (min-width: $bpDesktop) { // RWD-D
+
+    h2 {
+        font-size: 45px;
+    }
+
+    div.wrapper{
+        width: 80%;
+        padding: $my-d 0;
+    }
+
+    #about h2,
+    #about p,
+    #services h2,
+    #portfolio h2,
+    #contact div.contact-info h2,
+    #contact div.contact-methods p {
+        margin-bottom: $mb-d;
+    }
+
+}
+
+@media (min-width: $bpLarge) { // RWD-L
+
+    h2 {
+        font-size: 56px;
+    }
+
+    div.wrapper{
+        width: 60%;
+        padding: $my-d 0;
+    }
+
+}
+
+// BUTTONS
+
+a.btn {
+    display: block;
+    text-align: center;
+    max-width: 200px;
+    padding: 20px 40px; // RWD
+    border-radius: 16px;
+    font-weight: 700;
+    //letter-spacing: 1px;
+    //text-align: center;
+    transition-duration: .3s;
+}
+
+a.btn-linkedin,
+a.btn-cv {
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #000;
+}
+
+a.btn-cv {
+    border: none;
+}
+
+a.btn-hello {
+    background-color: $primaryColor;
+    color: #fff;
+}
+
+a.btn-linkedin:hover,
+a.btn-hello:hover,
+a.btn-cv:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+#contact a.btn-hello:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+// SOCIAL ICONS
+
+div.social-icons {
+
+    display: flex;
+    align-items: center;
+
+    p {
+        color: #000;
+    }
+
+    .icon {
+        margin-left: $ml-s;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ddd;
+        transition: background-color 0.3s;
+    }
+    
+    .icon:hover {
+        background-color: #555;
+    }
+    
+    .icon svg {
+        fill: #555;
+        width: 24px;
+        height: 24px;
+    }
+    
+    .icon:hover svg {
+        fill: #fff;
+    }
+
+}
+
+#contact div.social-icons {
+
+    p {
+        color: #fff;
+    }
+
+    .icon {
+        background-color: #555;
+    }
+
+    .icon:hover {
+        background-color: #fff;
+    }
+
+    .icon svg {
+        fill: #fff;
+    }
+
+    .icon:hover svg {
+        fill: #555;
+    }
+
+}
+
+// SECTIONS
+
+@import 'header';
+@import 'section-welcome';
+@import 'section-about';
+@import 'section-services';
+@import 'section-portfolio';
+@import 'section-tools';
+@import 'section-contact';
+
+// FOOTER
+
+footer {
+
+    padding: 2em 0;
+
+    .logo {
+        margin-bottom: 25px;
+    }
+
+    div.flex-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    @media (min-width: $bpDesktop) {
+
+        .logo {
+            margin-bottom: 0;
+        }
+
+        div.flex-container {
+            flex-direction: row;
+        }
+
+    }
+
+    a:link, a:visited {
+        font-weight: bold;
+        color: $primaryColor;
+    }
+
+}
+
+// BTN TOP
+
+a#btn-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    color: #555;
+    z-index: 9999;
+}
+
+#btn-top svg {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-top-hide {
+    display: none;
+}
+
+.btn-top-show {
+    display: block;
+}
+
+// CURSOR
+
+.cursor {
+    position: fixed;
+    border-radius: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    pointer-events: none;
+    left: -100px;
+    top: 50%;
+    z-index: 10000;
+    border: 2px solid white;
+    height: 30px;
+    width: 30px;
+    transition: all 300ms ease-out;
+
+    // Dark mode
+    //mix-blend-mode: difference;
+    //background-color: transparent;
+    
+    background-color: $primaryColor;
+    opacity: .2;
+}

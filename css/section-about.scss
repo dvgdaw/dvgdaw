@@ -1,0 +1,113 @@
+
+section#about {
+
+    color: #fff;
+
+    div.flex-container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: $mx-m;
+
+        div.years-container {
+            display: none;
+        }
+
+        div.img-container {
+            padding: 2.5em; // RWD-M
+            text-align: center;
+
+            img {
+                width: 100%;
+                max-width: 600px;
+            }
+
+        }
+
+        @media (min-width: $bpDesktop) {
+
+            // Left block
+            div.years-container {
+
+                display: block;
+                background-color: $secondaryColor;
+                
+                // Número de años
+                span:first-child {
+                    display: block;
+                    font-size: 395px;
+                    margin-top: -95px;
+                    margin-right: -30px;
+                    font-family: "Oswald", sans-serif;
+                }
+
+                // Texto "Años titulado"
+                span.middle {
+                    display: block;
+                    text-align: center;
+                    font-weight: bold;
+                    color: #000;
+                }
+
+                // Texto de abajo
+                span:last-child {
+                    display: block;
+                    text-align: center;
+                    font-size: 80px;
+                    //margin-bottom: -15px;
+                    font-family: I-pixel-u, serif;
+                }
+
+                // Común
+                span:first-child,
+                span:last-child {
+                    letter-spacing: -4px;
+                    line-height: 1;
+                    font-weight: 800;
+                }
+
+                p {
+                    color: $primaryColor;
+                }
+
+            }
+
+            div.img-container {
+                display: none;
+            }
+
+        }
+
+        // Right block
+        div:last-child {
+
+            // CV button + Signature
+            div:last-child {
+                display: flex;
+                align-items: center;
+            }
+
+            span.signature {
+                font-family: Thesignature;
+                font-size: 56px;
+                margin-left: $ml-s;
+            }
+
+        }
+
+    }
+
+    @media (min-width: $bpDesktop) {
+
+        div.flex-container {
+            flex-direction: row;
+            gap: $my-d;
+        }
+
+    }
+
+    span.signature {
+        font-family: TheSignature;
+    }
+
+}

@@ -1,0 +1,142 @@
+
+header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    border-bottom: 1px solid #E5E5E5;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em 11em;
+    }
+}
+
+// MENU
+
+div.mobile-menu,
+div.btn-linkedin {
+    display: none;
+}
+
+header {
+    
+    nav ul li {
+        list-style: none;
+        float: left;
+    }
+
+    nav ul li a {
+        margin-right: 45px;
+        font-size: 16px;
+        letter-spacing: 2px;
+        color: $fontColor;
+    }
+
+    nav ul li:last-child a {
+        margin-right: 0;
+    }
+
+    nav ul li a.active {
+        border-bottom: 2px solid $fontColor;
+        padding-bottom: .05em;
+    }
+
+}
+
+@media (min-width: $bpDesktop) {
+    
+    div.desktop-menu {
+        display: block;
+    }
+
+}
+
+@media (min-width: $bpLarge) {
+
+    div.btn-linkedin {
+        display: block;
+    }
+
+}
+
+div.toggle-button,
+div.mobile-menu {
+    display: none;
+}
+
+@media (max-width: $bpDesktop) {
+
+    header .container {
+        padding: 1em;
+    }
+
+    div.desktop-menu {
+        display: none;
+        border-top: 1px solid #E5E5E5;
+    }
+
+    div.mobile-menu {
+
+        nav {
+            display: flex; // Hace visible el contenedor del menú mobile
+        }
+    
+        nav ul { // Recoloca los elementos del menú
+            display: flex;
+            flex-direction: column;
+            padding: 1em;
+        }
+    
+        nav ul li {
+            margin-bottom: 1em;
+        }
+    
+        nav ul li:last-child {
+            margin-bottom: 0;
+        }
+
+    }
+
+    //  Menu items
+
+    // Aparece el botón del mobile menu
+
+    div.toggle-button {
+        width: 30px; // Ancho del contenedor de las líneas
+        height: 20px; // Separación entre líneas
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    .bar {
+        width: 100%; // Ancho de las líneas
+        height: 4px;
+        background-color: #5A5A5A;
+        transition: transform 0.3s ease;
+    }
+
+    // Bar transformation
+
+    .open .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .open .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    // Muestra mobile menu
+
+    div.show-mobile-menu {
+        display: flex;
+    }
+
+}

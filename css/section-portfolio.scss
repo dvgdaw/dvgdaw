@@ -1,0 +1,72 @@
+
+section#portfolio {
+
+    div.flex-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 50px;
+
+        div {
+            text-align: center;
+
+            img,
+            h3,
+            p {
+                margin-bottom: $mb-m / 2;
+            }
+
+            h3 {
+                text-decoration: underline;
+                font-weight: bold;
+                font-size: 25px;
+                color: $primaryColor;
+            }
+
+            img {
+                width: 100%;
+            }
+
+            div.btn-container {
+                display: flex;
+                justify-content: center;
+            }
+
+            a.btn {
+                display: block;
+                width: 100%;
+            }
+
+        }
+
+    }
+
+    @media (min-width: $bpDesktop) {
+
+        div.flex-container {
+            flex-direction: row;
+            gap: 100px;
+
+            div {
+
+                img,
+                h3,
+                p
+                 {
+                    margin-bottom: $mb-d / 2;
+                }
+
+            }
+
+        }
+
+    }
+
+    div.to-be-continued {
+        display: flex;
+        justify-content: end;
+        font-family: I-pixel-u, Arial, Helvetica, sans-serif;
+        margin-top: $mb-d;
+    }
+
+}

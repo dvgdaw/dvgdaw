@@ -1,0 +1,93 @@
+
+section#services {
+
+    ul li {
+        list-style: none;
+        transition-property: background-color color;
+        transition-duration: .5s;
+        color:  $fontColor;
+        background-color: #fff;
+        padding: $mx-m; // RWD-M
+    }
+
+    ul li.active-service {
+        color:  #fff;
+        background-color: $primaryColor;
+    }
+
+    ul li:hover {
+        transition-property: background-color color;
+        transition-duration: .5s;
+        color:  #fff;
+        background-color: $primaryColor;
+        cursor: pointer;
+    }
+
+    .service-name {
+
+    }
+
+    .service-logo {
+        //color: $primaryColor;
+    }
+
+    .service-logo:hover {
+        color: #fff;
+    }
+
+    svg {
+        width: 20px;
+    }
+
+    .active-service .service-logo {
+        color: #fff;
+        font-size: 42px;
+    }
+
+    ul li div.flex-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        // Nombre del servicio
+        p:first-child {
+            width: 100%;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: $mx-m; // RWD-M
+        }
+
+        // Descripción del servicio
+        p:last-child {
+            width: 100%;
+            font-size: 1em;
+            //margin-bottom: 0;
+        }
+
+    }
+
+    @media (min-width: $bpDesktop) {
+
+        ul li {
+            padding: $mb-d;
+        }
+
+        ul li div.flex-container {
+            flex-direction: row;
+
+            // Nombre del servicio
+            p:first-child {
+                width: 40%;
+                margin-bottom: 0;
+            }
+
+            // Descripción del servicio
+            p:last-child {
+                width: 60%;
+            }
+
+        }
+
+    }
+
+}
